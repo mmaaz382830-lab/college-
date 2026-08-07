@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>JavaScript keyboard Events</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+                padding-top: 80px;
+            }
+            h1 {
+                color: darkblue;
+                font-size: 40px;
+            }
+            h2 {
+                color: #555;
+                font-size: 24px;
+            }
+            input {
+                padding: 12px;
+                font-size: 18px;
+                width: 300px;
+                border: 2px solid darkblue;
+                border-radius: 8px;
+                outline: none;
+            }
+            input:focus {
+                border-color: green;
+            }
+            #demo {
+                margin-top: 25px;
+                font-size: 22px;
+                color: green;
+                font-weight: bold;
+            }
+        </style>
+<body>
+<h1>JavaScript Events</h1>
+<h2>The keydown Event</h2>
+
+<input id="k" type="text" placeholder="Press a key here!">
+
+<p id="demo"></p>
+
+<script>
+const k = document.getElementById("k");
+
+// Let k listen for keydown
+k.addEventListener("keydown", function (event) {
+  document.getElementById("demo").innerHTML = "You pressed: " + event.key;
+});
+</script>
+
+</body>
+</html>

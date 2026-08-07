@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+</head>
+<body>
+    <h1>JAVASCRIPT TOPICS  </h1>
+    <h2>1. Javascript Date</h2>
+    <button onclick="showDate()">Show Date</button>
+    <p id="dateOutput"></p>
+        <br><br><br>
+    <h2>2. Javascript Prototype </h2>
+    <button onclick="showPrototype()">Show Prototype</button>
+    <p id="prototypeOutput"></p>
+        <br><br><br>
+    <h2>3.ES6 Array Function</h2>
+    <button onclick="showArray()">Show Array Element</button>
+    <p id="arrayOutput"></p>
+            <br><br><br>
+    <h2>4. Prototype Methods</h2>
+    <button onclick="showPrototypeMethods()">Show Prototype Methods</button>
+    <p id="prototypeMethodsOutput"></p>
+            <br><br><br>
+    <h2>5. This keyword</h2>
+    <button onclick="showThis()">Show This Keyword</button>
+    <p id="thisOutput"></p>
+        <br><br><br>
+    <h2>6. spread operator</h2>
+    <button onclick="showSpread()">Show Spread Operator</button>
+    <p id="spreadOutput"></p>
+        <br><br><br>
+
+<h2>7. JavaScript Map</h2>
+
+<button onclick="showMap()">Show Map Result</button>
+
+<p id="mapResult"></p>
+        <br><br><br>
+
+<h2>8. JavaScript Set</h2>
+
+<button onclick="showSet()">Show Set Result</button>
+
+<p id="setResult"></p>
+        <br><br><br>
+
+    <script>
+        function showDate() {
+            const currentDate = new Date();
+            document.getElementById("dateOutput").innerText = currentDate.toString();
+        }
+        function person(name) {
+            this.name = name;
+        }
+        person.prototype.age =18;
+        function showPrototype(){
+            const person1 = new person("kaif");
+            document.getElementById("prototypeOutput").innerHTML ="name:" + person1.name + "<br>age:" + person1.age;
+        }
+        function showArray() {
+            const numbers = [1, 2, 3, 4, 5];
+            const doubledNumbers = numbers.map(num => num * 2);
+            document.getElementById("arrayOutput").innerText = "Original Array: " + numbers.join(", ") + "\nDoubled Array: " + doubledNumbers.join(", ");
+        }
+        function student(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        student.prototype.showName = function(){
+            return "Student Name:" + this.name;
+        };
+        function showPrototypeMethods() {
+            const student1 = new student("kaif", 18);
+            document.getElementById("prototypeMethodsOutput").innerHTML = student1.showName() + "<br>Age: " + student1.age;
+        }
+        function showThis() {
+            const student = {
+                name: "kaif",
+                displayName: function() {
+                    return "my name is:" + this.name;
+                }
+            };
+            document.getElementById("thisOutput").innerText =  student.displayName();
+        }
+        function showSpread() {
+            const arr1 = [1, 2, 3];
+            const arr2 = [4, 5, 6];
+            const combined = [...arr1, ...arr2];
+            document.getElementById("spreadOutput").innerText = "Combined Array: " + combined;
+        }
+        function showMap() {
+    const marks = new Map();
+
+    marks.set("JavaScript", 90);
+    marks.set("HTML", 85);
+
+    document.getElementById("mapResult").innerHTML =
+        "JavaScript Marks: " + marks.get("JavaScript");
+}
+function showSet() {
+    const numbers = new Set([10, 20, 20, 30]);
+
+    document.getElementById("setResult").innerHTML =
+        "Unique Values: " + [...numbers];
+}
+    </script>
+</body>
+</html>

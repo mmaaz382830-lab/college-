@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challan form</title>
+    <link rel="stylesheet" href="color.css">
+</head>
+<body>
+    <div class="form-container"> 
+        <h1>Bank Challan Form</h1>
+    <form onsubmit="return submitForm()">
+        <div class="form-group">
+            <label>Customer Name</label>
+            <input type="text" placeholder="ENTER YOUR NAME" onclick="askName()">
+            <br><br>
+    </div>
+    <div class="form-group">
+            <label>Account Type</label>
+            <input type="radio" name="Account Type" value="Saving" checked > Saving
+            <input type="radio" name="Account Type" value="current" checked > Current
+            <br><br>
+    </div>
+    <div class="form-group">
+        <label>Challan number</label>
+        <input type="text" placeholder="ENTER CHALLAN NUMBER"> 
+        <br><br>
+    </div>
+    <div class="form-group">
+        <label>Bank name</label>
+        <select id="Bank name">
+             <option >SELECT</option> 
+            <option >SBI bank</option> 
+            <option >Baroda bank</option>
+            <option >union bank</option> 
+            <option >vijaya bank</option>  
+        </select> 
+        <br><br> 
+    </div>
+    <div class="form-group">
+        <label>Account number</label>
+        <input type="number" placeholder="ENTER ACCOUNT NUMBER"> 
+        <br><br> 
+    </div>
+    <div class="form-group">
+        <label>Date</label>
+        <input type="date" placeholder="ENTER TODAY'S DATE"> 
+        <br><br> 
+    </div>
+    <div class="form-group">
+        <label>Amount</label>
+        <input type="number" placeholder="ENTER AMOUNT"> 
+    </div>
+    <div class="button-group">
+        <button type="submit">submit</button>
+        <button type="reset">clear</button>
+    </div>
+    </form>
+    <script>
+        alert("Welcome to the bank challan form");
+        function askName(){
+            let name = prompt("enter your name:");
+            alert("Hello " + name + ", welcome to the bank challan form!");
+        }
+        function submitForm(){
+            let result = confirm("Are you sure you want to submit the challan form?");
+            if (result == true) {
+                alert("challan form submitted successfully!");
+                return true;
+            }
+            else {
+                alert("challan form submission cancelled.");
+                return false;
+            }
+        }
+    </script>
+</div>
+  
+</body>
+</html>

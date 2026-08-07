@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>JavaScript mouse Events</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+                padding-top: 80px;
+            }
+            h1 {
+                color: darkblue;
+                font-size: 40px;
+            }
+            h2 {
+                color: #555;
+                font-size: 24px;
+            }
+            #box {
+                margin: 0 auto;
+                text-align: center;
+                line-height: 100px;
+                font-size: 18px;
+            }
+        </style>
+<body>
+<h1>JavaScript Events</h1>
+<h2>The mouseover and mouseout Events</h2>
+
+<div id="box"
+style="width:200px;height:100px;padding:16px;border:1px solid #000;">
+Move mouse over this box!
+</div>
+
+<script>
+const box = document.getElementById("box");
+
+// Let box listen for mouseover
+box.addEventListener("mouseover", function () {
+  box.innerHTML = "Mouse is over me!";
+});
+
+// Let box listen for mouseout
+box.addEventListener("mouseout", function () {
+  box.innerHTML = "Mouse is out!";
+});
+</script>
+</body>
+</html>
