@@ -56,7 +56,7 @@
         }
         person.prototype.age =18;
         function showPrototype(){
-            const person1 = new person("kaif");
+            const person1 = new person("mohan");
             document.getElementById("prototypeOutput").innerHTML ="name:" + person1.name + "<br>age:" + person1.age;
         }
         function showArray() {
@@ -72,7 +72,7 @@
             return "Student Name:" + this.name;
         };
         function showPrototypeMethods() {
-            const student1 = new student("kaif", 18);
+            const student1 = new student("mohan", 18);
             document.getElementById("prototypeMethodsOutput").innerHTML = student1.showName() + "<br>Age: " + student1.age;
         }
         function showThis() {
